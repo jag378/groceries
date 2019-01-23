@@ -21,4 +21,10 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-print(products)
+def product_name(any_products):
+    return any_products["name"]
+
+products = sorted(products, key=product_name)
+
+for p in products:
+    print("The name is " + p["name"] + " and the price is " + str(p["price"]))
